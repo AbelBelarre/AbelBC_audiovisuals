@@ -1,0 +1,311 @@
+
+/*Carrousel del principi*/
+
+/* Reset básico */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Variables para ajuste fácil */
+:root{
+  --fade-duration: 0000ms;       /* tiempo del crossfade */
+  --heartbeat-duration: 1000ms;  /* duración total del latido (ajústalo) */
+  --heartbeat-scale-1: 1.06;     /* escala del primer pulso */
+  --heartbeat-scale-2: 1.03;     /* escala del segundo pulso */
+}
+
+/* sección a pantalla completa */
+.hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vw;
+    overflow: hidden;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.7);
+}
+
+.background-slideshow {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 80%;
+    max-height: 50vw;
+    filter: drop-shadow(0 8px 20px #1f1f1f);
+    align-self: center;
+}
+
+.background-slideshow img {
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    max-height: 80vw;
+    object-fit: cover;
+    opacity: 0;
+    padding:8%;
+}
+
+.background-slideshow img.active {
+    align-items: center;
+    opacity: 1;
+    height: 100%;
+    align-self: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.55) 0%,
+        rgba(0,0,0,0.3) 50%,
+        rgba(0,0,0,0.6) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* NUEVA DISPOSICIÓN DEL CONTENIDO */
+.overlay-layout {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 10%;
+    color: #eaeaea;
+}
+
+/* TEXTO A UN LADO */
+.hero-text {
+    flex: 1;
+    text-align: left;
+    animation: fadeInLeft 1.8s ease forwards;
+}
+
+.hero-text h1 {
+    font-size: 5vw;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    color: #f3f3f3;
+    text-shadow: 10vw rgb(0, 0, 0);
+}
+
+.hero-text p {
+    font-size: 2vw;
+    font-weight: 300;
+    color: #ccc;
+    letter-spacing: 1px;
+    opacity: 1;
+}
+
+/* FOTO PRINCIPAL (TÚ) */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    animation: fadeInRight 1s ease forwards;
+}
+
+.hero-image img {
+    max-height: 40vw;
+    height: auto;
+    object-fit: contain;
+    opacity: 1;
+    pointer-events: none;
+}
+
+/* ANIMACIONES */
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* MÓVILES */
+@media (max-width: 900px) {
+    .overlay-layout {
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: center;
+        padding: 2rem 1rem 4rem;
+    }
+
+    .hero-text {
+        margin-top: 1.5rem;
+        order: 2; /* el texto va debajo de la imagen */
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .hero-image {
+        order: 1; /* la imagen primero */
+        width: 200%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .hero-image img {
+        width: 90%;
+        height: auto;
+        max-height: 60vh;
+        object-fit: contain;
+        margin-bottom: 1rem;
+        filter: drop-shadow(0 4px 10px rgba(0,0,0,0.6));
+    }
+
+    .background-slideshow img {
+        padding: 0; /* elimina el padding que distorsiona */
+    }
+}
+
+/* la que está activa se muestra y recibe la animación "latido" */
+.background-slideshow .slide.active {
+    opacity: 1;
+    /* animación de transform (latido) + no tocar opacity aquí */
+    animation: heartbeat var(--heartbeat-duration) ease both;
+}
+
+/* Latido: doble pulso sutil (primero más fuerte y rápido, segundo más pequeño) */
+@keyframes heartbeat {
+    0%   { transform: scale(1); }
+    12%  { transform: scale(var(--heartbeat-scale-1)); }
+    24%  { transform: scale(1); }
+    40%  { transform: scale(var(--heartbeat-scale-2)); }
+    60%  { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+
+/*FI DEL CARROUSEL*/
+
+
+
+/*INICI TARJES*/
+
+/* === Sección de tarjetas === */
+.cards-section {
+    background: linear-gradient(to bottom, black, #1e1e1e);
+    color: #e5e5e5;
+    padding: 6rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* Tarjeta base */
+.card {
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Sutil reflejo al pasar el ratón */
+.card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle at top left,
+        rgba(255,255,255,0.07),
+        transparent 70%
+    );
+    transform: rotate(25deg);
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 32px rgba(255,255,255,0.08);
+}
+
+/* Contenido de la tarjeta */
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #c9c9c9;
+    margin-bottom: 1.5rem;
+}
+
+/* Botón */
+.card-btn {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #eaeaea;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.card-btn:hover {
+    background: #eaeaea;
+    color: #111;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cards-section {
+    padding: 4rem 1rem;
+    }
+
+    .card-content h3 {
+    font-size: 1.3rem;
+    }
+}
+
+/*FI TARJES*/
+
+body{
+    background-color:#111;
+}
