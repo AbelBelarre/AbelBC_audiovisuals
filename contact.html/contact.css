@@ -151,3 +151,19 @@ input:focus, textarea:focus {
         width: 100%;
     }
 }
+
+
+.form-status {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.form-status.success {
+  color: #9efc9e; /* verde suave */
+}
+
+.form-status.error {
+  color: #ff7b7b; /* rojo suave */
+}

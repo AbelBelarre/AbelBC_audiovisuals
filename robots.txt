@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://abelbelarre.github.io/AbelBC_audiovisuals/sitemap.xml

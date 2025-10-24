@@ -117,57 +117,57 @@ const translations = {
 
     ca: {
         //Title page
-        heroTitle: "Abel Belarre",
-        heroSubtitle: "Comunicador i Storyteller",
-        CardAboutTitle: "Sobre mi",
-        CardAboutSubtitle: "Esbrina qui soc.",
-        CardAboutButton: "Saber-ne més",
-        CardPortfolioTitle: "Portfoli",
-        CardPortfolioSubtitle: "Mira els meus projectes.",
-        CardPortfolioButton: "Veure projectes",
-        CardContactTitle: "Contacte",
-        CardContactSubtitle: "Parla amb mi.",
-        CardContactButton: "Contactar",
+    heroTitle: "Abel Belarre",
+    heroSubtitle: "Comunicador i Storyteller",
+    CardAboutTitle: "Sobre mi",
+    CardAboutSubtitle: "Esbrina qui soc.",
+    CardAboutButton: "Saber-ne més",
+    CardPortfolioTitle: "Portfoli",
+    CardPortfolioSubtitle: "Mira els meus projectes.",
+    CardPortfolioButton: "Veure projectes",
+    CardContactTitle: "Contacte",
+    CardContactSubtitle: "Parla amb mi.",
+    CardContactButton: "Contactar",
 
-        //About page
-        AboutTitle: "Sobre mi",
-        AboutSubtitle: "Comunicador i Storyteller",
+//About page
+    AboutTitle: "Sobre mi",
+    AboutSubtitle: "Comunicador i Storyteller",
 
-        AboutHeader: "Hola, soc Abel Belarre",
-        AboutText1: "Soc un comunicador i narrador de Barcelona, treballant en totes les àrees de la producció i especialitzat en rols creatius com el guió.",
-        AboutText2: "El meu treball intenta combinar l'entreteniment i la qualitat. Crec que hi ha humor a tot arreu de la vida, i que no es tracta només del que expliques, sinó també de com ho fas.",
-        AboutText3: "He treballat en curtmetratges, sèries i màrqueting, intentant fer alguna cosa memorable cada vegada. La meva ambició és arribar més lluny i el meu tema recurrent és la naturalesa humana.",
-        AboutText4: "Creem alguna cosa significativa junts.",
+    AboutHeader: "Hola, soc Abel Belarre",
+    AboutText1: "Soc un comunicador i narrador de Barcelona, treballant en totes les àrees de la producció i especialitzat en rols creatius com el guió.",
+    AboutText2: "El meu treball intenta combinar l'entreteniment i la qualitat. Crec que hi ha humor a tot arreu de la vida, i que no es tracta només del que expliques, sinó també de com ho fas.",
+    AboutText3: "He treballat en curtmetratges, sèries i màrqueting, intentant fer alguna cosa memorable cada vegada. La meva ambició és arribar més lluny i el meu tema recurrent és la naturalesa humana.",
+    AboutText4: "Creem alguna cosa significativa junts.",
 
-        AboutBrandsTitle: "Brands & Collabs",
+    AboutBrandsTitle: "Brands & Collabs",
 
-        //Portfolio page
-        PortfolioTitle: "Portfoli",
-        PortfolioSubtitle: "Treballs i experiments",
+//Portfolio page
+    PortfolioTitle: "Portfoli",
+    PortfolioSubtitle: "Treballs i experiments",
         PrivateTitle: "Projecte privat",
         PrivateMsg: "En circulació - Disponible sota demanda.",
         PrivateContact: "Contactar",
 
 
-        //Contact page
-        ContactTitle: "Parlem",
-        ContactSubtitle: "De la teva pròxima història",
+ //Contact page
+    ContactTitle: "Parlem",
+    ContactSubtitle: "De la teva pròxima història",
 
-        FormName: "Nom",
-        FormEmail: "Email",
-        FormMessage: "Missatge",
-        FormSend: "Enviar",
+    FormName: "Nom",
+    FormEmail: "Email",
+    FormMessage: "Missatge",
+    FormSend: "Enviar",
 
-        ExtraContactHeader: "Contacta",
-        ContactLocation: "Barcelona, Espanya",
+    ExtraContactHeader: "Contacta",
+    ContactLocation: "Barcelona, Espanya",
 
-        //Other
+    //Other
 
-        BackButton: "← Tornar",
+    BackButton: "← Tornar",
 
-        NavigatePortfolioButton: "Veure els meus Projectes",
-        NavigateContactButton: "Contacta amb mi",
-        NavigateAboutButton: "Descobreix qui soc",
+    NavigatePortfolioButton: "Veure els meus Projectes",
+    NavigateContactButton: "Contacta amb mi",
+    NavigateAboutButton: "Descobreix qui soc",
 
     },
 };
